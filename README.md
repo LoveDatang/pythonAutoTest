@@ -6,3 +6,7 @@ pythonAutoTest： python接口自动化测试
 
 
 pycharm 试试可以连接git吗？
+
+
+
+test ssh变化对pycharm的影响
