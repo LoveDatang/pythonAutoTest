@@ -1,4 +1,4 @@
-from case.test_method import TestMethod
+from case.test_mock_skip_assert_report import TestMethod
 import unittest
 
 # 第一种执行方法
@@ -20,7 +20,7 @@ import unittest
 # runner = unittest.TextTestRunner()
 # runner.run(suite)
 
-# 第四种测试用例添加方法：discover
+# 第四种测试用例添加方法：discover（调用其他模块中的方法）
 # test_dir = "./"
 # discover = unittest.defaultTestLoader.discover(test_dir,pattern="selenium*.py")
 # runner = unittest.TextTestRunner()

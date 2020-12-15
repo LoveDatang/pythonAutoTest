@@ -2,7 +2,7 @@ import unittest
 from base.demo import testRequest
 
 
-class TestMethod1(unittest.TestCase):
+class TestUnittest(unittest.TestCase):
 
     # run运行时需要选择运行整个文件 并且 使用unittest.main()方法才能使得按照
     # setUpClass，setUp，test_01，tearDown，setUp，test_02，tearDown，tearDownClass的顺序执行
@@ -35,10 +35,9 @@ class TestMethod1(unittest.TestCase):
 
 
 if __name__ == '__main__':
-
     suite = unittest.TestSuite()
-    suite.addTest(TestMethod1("test_01"))
-    suite.addTest(TestMethod1("test_02"))
+    suite.addTest(TestUnittest("test_01"))
+    suite.addTest(TestUnittest("test_02"))
     runner = unittest.TextTestRunner()
     runner.run(suite)
 
