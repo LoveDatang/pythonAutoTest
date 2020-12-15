@@ -5,11 +5,13 @@
 #  a: 1
 #  b: 2
 #  c: 3
+
 ##变成list类型了
 #  list:
 #    - a
 #    - b
 #    - c
+#作为可以承载参数的yml文件去被调用
 -
   name: "wuxy"
   info: "hahha"
