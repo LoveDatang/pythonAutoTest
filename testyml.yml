@@ -1,0 +1,19 @@
+##嵌套字典类型
+#name: wuxy
+#info: 666
+#data:
+#  a: 1
+#  b: 2
+#  c: 3
+##变成list类型了
+#  list:
+#    - a
+#    - b
+#    - c
+-
+  name: "wuxy"
+  info: "hahha"
+-
+  name: "fdf "
+  info: "fdasf"
+
