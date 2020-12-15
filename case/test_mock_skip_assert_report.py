@@ -1,7 +1,7 @@
 import json
 import unittest
 from TestRunner import HTMLTestRunner
-from base.test_requests import testRequest
+from base.test_requests import TestRequest
 from mock.mock_demo import mock_test
 from unittest import mock
 
@@ -18,7 +18,7 @@ class TestMethod(unittest.TestCase):
         print("test_tearDownClass")
 
     def setUp(self) -> None:
-        self.sendRequest = testRequest()
+        self.sendRequest = TestRequest()
         print("test-setUp")
 
     def tearDown(self) -> None:
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     filepath = "../report/result.html"
     # with 用来管理文件的打开，关闭，生成的fp作为HTMLTestRunner的第一个参数
     with(open(filepath, 'wb')) as fp:
-        runner = HTMLTestRunner(stream=fp, title='<我的测试框架实践>的测试报告', description='总共4个测试用例，跳过了一个')
+        runner = HTMLTestRunner(stream=fp, title='<我的测试框架实践>的测试报告', description='测试报告描述或者测试项目描述')
         runner.run(suite)
 
 

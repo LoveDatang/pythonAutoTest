@@ -19,7 +19,7 @@ data2 = {
 }
 
 
-class testRequest():
+class TestRequest:
 
     def send_requests(self, method, url):
         response = requests.request(method, url)
@@ -42,7 +42,7 @@ class testRequest():
         return response
 
 
-test = testRequest()
+test = TestRequest()
 
 test.send_requests(method, url2)
 test.send_post(url2, data1)

@@ -1,5 +1,5 @@
 import unittest
-from base.test_requests import testRequest
+from base.test_requests import TestRequest
 
 
 class TestUnittest(unittest.TestCase):
@@ -19,7 +19,7 @@ class TestUnittest(unittest.TestCase):
 
     # 在每个测试方法前进行执行
     def setUp(self) -> None:
-        self.sendRequest = testRequest()
+        self.sendRequest = TestRequest()
         print("test-setUp")
 
     # 在每个测试方法后进行执行
