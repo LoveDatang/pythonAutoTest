@@ -10,23 +10,19 @@ class TestMethod(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        print("类执行之前的方法")
+        print("test_setUpClass")
 
-    # 类执行后的方法为什么不在类执行后进行调用呢？
     @classmethod
     def tearDownClass(cls) -> None:
-        print("类执行之后的方法")
+        print("test_tearDownClass")
 
-    # 在每个测试方法前进行执行
     def setUp(self) -> None:
         self.sendRequest = testRequest()
         print("test-setUp")
 
-    # 在每个测试方法后进行执行
     def tearDown(self) -> None:
         print("test-tearDown")
 
-    # 所有的测试用例都要以test开头
     def test_01(self):
         url2 = "https://api.binstd.com/shouji/query"
         data = {
@@ -62,7 +58,7 @@ class TestMethod(unittest.TestCase):
         print("这个是测试方法3")
 
     # 1>2是false状态，所以skip没有生效
-    @unittest.skipIf(1<2,"不对")
+    @unittest.skipIf(1 < 2, "不对")
     def test_04(self):
         url2 = "https://api.binstd.com/shouji/query"
         data = {
@@ -82,7 +78,7 @@ class TestMethod(unittest.TestCase):
         }
         method = "post"
         # 不太理解这里
-        res = mock_test(self.sendRequest.choose_method_to_send,data,url2,method,return_data)
+        res = mock_test(self.sendRequest.choose_method_to_send, data, url2, method, return_data)
         print(res)
         # mock_data = mock.Mock(return_value=data)
         # self.sendRequest.choose_method_to_send = mock_data
@@ -91,21 +87,13 @@ class TestMethod(unittest.TestCase):
         print("这个是测试方法4")
 
 
-
 if __name__ == '__main__':
-    # 注意选择 run 执行整个文件，而不是 ide自作聪明给您选择的unittest for xxx等才能顺序执行
-    # setUpClass，setUp,test_01,tearDown,setUp,test_02,tearDown,tearDownClass的顺序执行。
 
-    # 第一个执行方法，执行了所有的测试用例
-    # unittest.main()
-
-    # 第二种执行方法，可以通过testsuite管理需要执行的而测试用例
     suite = unittest.TestSuite()
     suite.addTest(TestMethod("test_01"))
     suite.addTest(TestMethod("test_02"))
     suite.addTest(TestMethod("test_03"))
     suite.addTest(TestMethod("test_04"))
-
     unittest.TextTestRunner().run(suite)
 
     # filepath = "../report/result.html"
@@ -114,11 +102,11 @@ if __name__ == '__main__':
     #     runner = HTMLTestRunner(stream=fp, title='<我的测试框架实践>的测试报告', description='总共4个测试用例，跳过了一个')
     #     runner.run(suite)
 
-# 在进行接口串联测试的时候
+# 如何进行接口串联测试
 # 1. 可以用一个case的返回值放在setUp的变量里面供其他case调用
 # 2. 可以在一个case里面设置全局变量，但是要注意设置的全局变量一定要在被调用的case之前的case里面，因为unittest是按照函数名称排序执行的。
 
 # 思考如何管理不同py文件的执行
-#四种skip
+# 四种skip
 
 # suite

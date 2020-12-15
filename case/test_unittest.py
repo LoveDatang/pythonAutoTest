@@ -3,8 +3,10 @@ from base.demo import testRequest
 
 
 class TestMethod1(unittest.TestCase):
+
     # run运行时需要选择运行整个文件 并且 使用unittest.main()方法才能使得按照
     # setUpClass，setUp，test_01，tearDown，setUp，test_02，tearDown，tearDownClass的顺序执行
+
     # 在全部测试用例执行之前进行执行
     @classmethod
     def setUpClass(cls) -> None:
@@ -33,7 +35,7 @@ class TestMethod1(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    # unittest.main()
+
     suite = unittest.TestSuite()
     suite.addTest(TestMethod1("test_01"))
     suite.addTest(TestMethod1("test_02"))
@@ -45,4 +47,3 @@ if __name__ == '__main__':
 # 2. test case 通过类继承unittest.TestCase来实现，每个测试用例函数名都需要用test开头
 # 3. test suite 测试套件
 # 4. test runner 运行器，通过和suite配合使用进行测试用例的执行
-
