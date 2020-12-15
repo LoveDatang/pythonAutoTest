@@ -1,7 +1,7 @@
 import json
 import unittest
 from TestRunner import HTMLTestRunner
-from base.demo import testRequest
+from base.test_requests import testRequest
 from mock.mock_demo import mock_test
 from unittest import mock
 

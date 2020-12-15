@@ -15,18 +15,20 @@ def read_file():
             param.append(line.strip('\n').split(','))
     return param
 
+
 @ddt()
 class selenium_test_cases(unittest.TestCase):
     # 用来放置可以被读取的文件信息，作为测试用例的参数输入条件
 
     def setUp(self) -> None:
-    #     self.driver = webdriver.Chrome("../chromedriver")
-    #     # self.driver.get("http://www.baidu.com")
+        #     self.driver = webdriver.Chrome("../chromedriver")
+        #     # self.driver.get("http://www.baidu.com")
         pass
+
     #
     def tearDown(self) -> None:
-    #     time.sleep(5)
-    #     self.driver.quit()
+        #     time.sleep(5)
+        #     self.driver.quit()
         pass
 
     # 通过ddt传入不同的参数，实现多次循环操作同一个测试用例
@@ -64,7 +66,7 @@ class selenium_test_cases(unittest.TestCase):
     #     print(value)
     # 注意yml文件的格式，空格等
     @file_data('../testyml.yml')
-    def test_01(self,**kwargs):
+    def test_01(self, **kwargs):
         print(kwargs.get("name"))
         print(kwargs.get("info"))
 

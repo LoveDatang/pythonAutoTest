@@ -1,5 +1,5 @@
 import unittest
-from base.demo import testRequest
+from base.test_requests import testRequest
 
 
 class TestUnittest(unittest.TestCase):
